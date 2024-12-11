@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+
+:root {
+  --primary-button-bg: #929AAB;
+  --secondary-bg: #F3F3F3;
+  --text-color: #393E46;
+  --header-bg: #343434;
+  --card-bg: #0e120e;
+  --banner-bg: #393E46;
+  --body-bg: #E9DCBE;
+  --nav-link-color: #f2f2f2;
+  --scroll-watcher: #C96868;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:"Montserrat", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    max-width: 100%;
+    display: flex;
+    background: var(--body-bg);
+}
+
+:is(#logo, .nav-links > *, .nav-links details > *) {
+  user-select: none;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  background: var(--header-bg);
+  padding: 15px;
+
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 99;
+
+  box-shadow: 0 10px 10px var(--card-bg);
+}
+
+#logo {
+  width: 11.5rem;
+  filter: drop-shadow(0px 0px 25px var(--secondary-bg));
+}
+
+#checkbox {
+  display: none;
+}
+
+i {
+  color: #fff;
+  cursor: pointer;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+
+.search-box input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: var(--secondary-bg);
+  border-radius: 30px;
+  color: var(--header-bg);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 25px;
+  box-shadow: 0px 5px 15px var(--card-bg);
+}
+
+.search-box button {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  background: none;
+  border: none;
+  background: green;
+
+  position: absolute;
+  right: 5px;
+}
+
+header nav ul{  
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: var(--nav-link-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  font-size: 1.4rem;
+  position: relative;
+}
+
+header nav ul li a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+
+  width: 0;
+  height: 3px;
+  background: var(--secondary-bg);
+  box-shadow: 0px 0px 15px red; 
+  transition: 0.3s;
+}
+
+header nav ul li a:hover::before {
+  width: 75%;
+}
+
+header .menu {
+  font-size: 2.5em;
+  display: none;
+}
+
+header nav details summary {
+  color: var(--nav-link-color);
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  list-style: none;
+}
+
+header details summary::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+
+  width: 0;
+  height: 3px;
+  background: var(--secondary-bg);
+  box-shadow: 0px 0px 15px red; 
+  transition: 0.3s;
+}
+
+summary:hover::before {
+  width: 100%;
+}
+
+.social-media > *::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+
+  width: 0;
+  height: 3px;
+  background: var(--secondary-bg);
+  box-shadow: 0px 0px 15px red; 
+  transition: 0.3s;
+}
+
+.social-media > *:hover::before {
+  width: 100%;
+}
+
+header details ul {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.technology {
+  display: none;
+}
+
+header nav details ul {
+  display: flex;
+  flex-direction: column;
+
+  background: var(--header-bg);
+  height: 10%;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px;
+}
+
+header nav details[open] ~ #products-list{
+  height: 100%;
+}
+
+
+header nav details ul li a:hover {
+  border: none;
+  border-radius: 10px;
+}
+
+.social-media > * {
+  scale: 180%;
+}
+
+.social-media {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 35px;
+}
+
+.fa-bars {
+  transform: scale(2);
+}
+
+.fa-close {
+  transform: scale(2);
+}
+
+#sidebar-active {
+  display: none;
+}
+
+:is(#open-sidebar-btn, #close-sidebar-btn) {
+  padding: 0 20px;
+  display: none;
+}
+
+/* 
+header nav details[open] ul{
+  height: 110%;
+  transition: .5s;
+
+  animation: summary-open 0.5s ease;
+}
+
+@keyframes summary-open {
+  from {
+    height: 10%;
+  }
+  to {
+    height: 110%;
+  }
+} */
+/* 
+header nav details[closed] ul {
+  animation: summary-close .5s ease;
+}
+
+@keyframes summary-close {
+  from {
+    height: 110%;
+  }
+  to {
+    height: 10%;
+  }
+} */
+
+@media (max-width: 1565px) {
+  .social-media {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-box {
+    max-width: 40%;
+  }
+}
+
+@media (max-width: 1405px) {
+  .search-box {
+    max-width: 25%;
+  }
+}
+
+@media (max-width: 1314px) {
+  .sidebar {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -30%;
+    z-index: 10;
+    width: 30%;
+
+    background-color: var(--banner-bg);
+    height: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2rem;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+
+    transition: .5s;
+  }
+
+  .social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 7rem;
+    gap: 6em;
+    font-size: .7rem;
+  }
+
+  .social-media > *:hover::before {
+    content: '';
+    width: 0;
+  }
+
+  #close-sidebar-btn {
+    display: block;
+    transform: scale(1.75);
+    position: absolute;
+    top: 3rem;
+    left: 1.5rem;
+  }
+
+  #open-sidebar-btn {
+    display: block;
+    z-index: 9;
+  }
+
+  .social-media > * {
+    transform: scale(1.5);
+    width: 0;
+    letter-spacing: 2px;
+  }
+
+  .menu {
+    display: flex;
+    width: 50px;
+    justify-content: center;
+  }
+
+  #checkbox:checked ~ ul {
+    right: 0;
+  }
+
+  #sidebar-active:checked ~ .sidebar{
+    position: fixed;
+    right: 0;
+    transition: .5s;
+  }
+
+  .fa-facebook::after {
+    content: 'Facebook';
+  }
+  
+  .fa-instagram::after {
+    content: 'Instagram';
+  }
+
+  .fa-twitter::after {
+    content: 'Twitter';
+  }
+
+  .fa-youtube::after {
+    content: 'Youtube';
+  }
+
+  
+}
+
+
+
+@media (max-width: 1192px){
+
+}

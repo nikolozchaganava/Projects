@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="icon" type="image/png" href="images/logo.png" sizes="512x56">
+    <link rel="stylesheet" href="styIe.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="Images/logo.png" alt="Images/logo.png" id="logo">
+        </a>
+        <div class="search-box">
+            <input type="text" name="search" id="search" placeholder="Search....">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        <nav class="links-container">
+            <ul class="nav-links">
+                <li>
+                    <a class="home" href="index.html">Home</a>
+                </li>
+                <li><a href="About/index.html">About</a></li>
+                <li>
+                    <details>
+                        <summary>Products</summary>
+                        <ul id="products-list">
+                            <li><a href="Technology/technology.html">Technology</a></li>
+                            <li><a href="#">Clothing</a></li>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Food</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a href="Contact/index.html">Contact</a></li>
+                <li><a href="Cart/index.html">Cart</a></li>
+
+                <input type="checkbox" id="sidebar-active">
+
+                <label for="sidebar-active" id="open-sidebar-btn">
+                    <i class="fa fa-bars"></i>
+                </label>
+    
+                <div class="sidebar">
+                    <label for="sidebar-active" id="close-sidebar-btn">
+                        <i class="fa fa-close"></i>
+                    </label>
+                    <div class="social-media">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+    </header>
+</body>
+<script src="script.js"></script>
+</html>
