@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import Home from './Home'
 
 export default function NotFound() {
   return (
